@@ -5,30 +5,130 @@
 }
 
 @font-face {
-    font-family: Roboto;
-    src: url(fonts/Roboto-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: Roboto;
+  src: url(fonts/Roboto-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: Rye;
-    src: url(fonts/Rye-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: Rye;
+  src: url(fonts/Rye-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: SpecialElite;
-    src: url(fonts/SpecialElite-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: SpecialElite;
+  src: url(fonts/SpecialElite-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+--_accent-color: #ffde59;
+
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #222;
+  color: #dec394;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(
+    45deg,
+    hsla(40, 100%, 90%, 0.08),
+    hsla(40, 0%, 0%, .2)
+  );
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.nav-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.site-name {
+  font-family: "Rye";
+  font-size: 1.30rem;
+  color: #555;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-list a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+  margin-left: 1rem;
+
+  transition: color 300ms ease-in;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: floralwhite;
+}
+
+.fancy-link {
+  position: relative;
+}
+
+.fancy-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--_accent-color);
+  
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms ease-in;
+}
+
+.fancy-link:hover::after,
+.fancy-link:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  
+}
+
+.logo {
+  width: 30px;
+  margin-left: 1rem;
+  opacity: .5;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 1;
 }
