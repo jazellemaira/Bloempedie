@@ -133,7 +133,7 @@ body {
 .header-grid {
   display: grid;
   place-items: center;
-  margin-block: 60px;
+  margin-block: 60px 20px;
   text-transform: uppercase;
 }
 
