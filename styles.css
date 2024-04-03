@@ -326,12 +326,14 @@ body {
   transform: scale(1) rotateY(0.5turn);
 }
 
-@media (max-width: 508px) {
-  .flower-card__front::before {
+@media (max-width: 408px) {
+  .flower-card__front::before,
+  .flower-card__back::before {
     width: 120px;
   }
 
-  .wide .flower-card__front::before {
+  .wide .flower-card__front::before,
+  .wide .flower-card__back::before {
     width: 250px;
   }
 }
