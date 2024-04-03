@@ -30,6 +30,10 @@
 
 :root {
   --_accent-color: hsl(48, 100%, 67%);
+
+  --_level-one: translateZ(3rem);
+  --_level-two: translateZ(6rem);
+  --_level-three: translateZ(9rem);
 }
 
 html {
@@ -184,6 +188,29 @@ body {
 
 .flower-card__content {
   position: relative;
+
+  transition: transform 3s;
+  transform-style: preserve-3d;
+}
+
+.flower-card:hover .flower-card__content {
+  transform: rotateY(0.5turn);
+}
+
+.flower-card__front,
+.flower-card__back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* backface-visibility: hidden; */
+
+  transform-style: preserve-3d;
+}
+
+.flower-card__front {
+  width: 100%;
 }
 
 .flower-card__front > img {
@@ -192,7 +219,8 @@ body {
   filter: saturate(200%);
 }
 
-.flower-card__front::before {
+.flower-card__front::before,
+.flower-card__back::before {
   --_border-spacer: 4px;
 
   content: "";
@@ -205,16 +233,19 @@ body {
   height: 92px;
   border: 1px solid currentColor;
   z-index: 1;
+  transform: var(--_level-one);
 }
 
 .flower-card__back {
   position: absolute;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 202px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  display: none;
+
+  transform: scale(0);
 }
 
 .flower-card__text-container {
@@ -222,6 +253,7 @@ body {
   flex-direction: column;
   overflow-y: scroll;
   z-index: 1;
+  transform: var(--_level-two);
 }
 
 .flower-card__title,
@@ -248,6 +280,7 @@ body {
   justify-content: flex-end;
   list-style: none;
   padding-top: 0.95rem;
+  transform: var(--_level-three);
 }
 
 .flower-card__icon > img {
@@ -271,11 +304,13 @@ body {
   width: 200%;
 }
 
-.tall .flower-card__front::before {
+.tall .flower-card__front::before,
+.tall .flower-card__back::before {
   height: 194px;
 }
 
-.wide .flower-card__front::before {
+.wide .flower-card__front::before,
+.wide .flower-card__back::before {
   width: 217px;
 }
 
@@ -287,9 +322,9 @@ body {
   filter: grayscale(100%) contrast(175%) brightness(40%);
 }
 
-/* .tall.wide .flower-card__back {
-  display: flex;
-} */
+.tall.wide:hover .flower-card__back {
+  transform: scale(1) rotateY(0.5turn);
+}
 
 @media (max-width: 508px) {
   .flower-card__front::before {
