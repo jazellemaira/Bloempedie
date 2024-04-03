@@ -68,6 +68,14 @@ body {
   font-family: "Rye";
   font-size: 1.3rem;
   color: #555;
+
+  transition: color 300ms ease-in-out, filter 300ms ease-in-out;
+}
+
+.nav-top .site-name:hover,
+.nav-top .site-name:focus {
+  color: var(--_accent-color);
+  filter: saturate(50%);
 }
 
 .nav-list {
