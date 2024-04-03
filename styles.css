@@ -151,7 +151,6 @@ body {
   font-weight: lighter;
   font-size: 2.75rem;
   filter: brightness(2);
-
   order: 2;
 }
 
@@ -163,7 +162,6 @@ body {
   font-weight: lighter;
   letter-spacing: 4px;
 }
-/* _______________________________________________________________________________ */
 
 .flowers-grid-layout {
   width: 800px;
@@ -179,14 +177,6 @@ body {
   grid-auto-flow: dense;
 }
 
-.tall {
-  grid-row: span 2;
-}
-
-.wide {
-  grid-column: span 2;
-}
-
 .flower-card {
   overflow: hidden;
   box-shadow: 0 0 10px 0 #9e8f0461;
@@ -196,35 +186,10 @@ body {
   position: relative;
 }
 
-.flower-card__front {
-  position: absolute;
-}
-
 .flower-card__front > img {
   display: block;
   width: 100%;
   filter: saturate(200%);
-}
-
-.flower-card__front::before {
-  width: 102px;
-  height: 92px;
-}
-
-.tall .flower-card__front::before {
-  height: 194px;
-}
-
-
-.wide .flower-card__front::before {
-  width: 217px;
-}
-
-.tall .flower-card__front > img {
-  height: 220px;
-}
-.wide .flower-card__front > img {
-  width: 200%;
 }
 
 .flower-card__front::before {
@@ -236,16 +201,10 @@ body {
   right: var(--_border-spacer);
   bottom: var(--_border-spacer);
   left: var(--_border-spacer);
+  width: 102px;
+  height: 92px;
   border: 1px solid currentColor;
   z-index: 1;
-}
-
-.accent-tile {
-  color: var(--_accent-color);
-}
-
-.accent-tile > img {
-  filter: grayscale(100%) contrast(175%) brightness(40%);
 }
 
 .flower-card__back {
@@ -257,10 +216,6 @@ body {
   padding: 20px;
   display: none;
 }
-
-/* .tall.wide .flower-card__back {
-  display: flex;
-} */
 
 .flower-card__text-container {
   display: flex;
@@ -298,6 +253,43 @@ body {
 .flower-card__icon > img {
   width: 25px;
 }
+
+/* Flower grid tile variations */
+.tall {
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall .flower-card__front > img {
+  height: 220px;
+}
+
+.wide .flower-card__front > img {
+  width: 200%;
+}
+
+.tall .flower-card__front::before {
+  height: 194px;
+}
+
+.wide .flower-card__front::before {
+  width: 217px;
+}
+
+.accent-tile {
+  color: var(--_accent-color);
+}
+
+.accent-tile > img {
+  filter: grayscale(100%) contrast(175%) brightness(40%);
+}
+
+/* .tall.wide .flower-card__back {
+  display: flex;
+} */
 
 @media (max-width: 508px) {
   .flower-card__front::before {
