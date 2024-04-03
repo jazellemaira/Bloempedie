@@ -300,9 +300,9 @@ body {
   height: 220px;
 }
 
-.wide .flower-card__front > img {
+/* .wide .flower-card__front > img {
   width: 200%;
-}
+} */
 
 .tall .flower-card__front::before,
 .tall .flower-card__back::before {
