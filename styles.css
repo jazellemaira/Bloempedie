@@ -218,7 +218,7 @@ body {
 .flower-card__front > img {
   display: block;
   width: 100%;
-  filter: saturate(200%);
+  filter: saturate(120%);
 }
 
 .flower-card__front::before,
@@ -369,7 +369,11 @@ body {
 }
 
 .accent-tile > img {
-  filter: grayscale(100%) contrast(175%) brightness(40%);
+  filter: grayscale(100%) contrast(145%) brightness(100%);
+}
+
+.flower-card:hover .accent-tile > img {
+  filter: saturate(120%);
 }
 
 @media (max-width: 408px) {
