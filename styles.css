@@ -244,7 +244,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 10px 20px;
 
   transform: scale(0);
@@ -319,7 +319,7 @@ body {
 }
 
 .just-small .flower-card__front > img {
-height: 100px;
+  height: 100px;
 }
 
 .just-tall .flower-card__back {
