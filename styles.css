@@ -318,6 +318,10 @@ body {
   width: 217px;
 }
 
+.just-small .flower-card__front > img {
+height: 100px;
+}
+
 .just-tall .flower-card__back {
   height: 202px;
 }
