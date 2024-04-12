@@ -206,7 +206,6 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  /* backface-visibility: hidden; */
 
   transform-style: preserve-3d;
 }
@@ -231,7 +230,7 @@ body {
   right: var(--_border-spacer);
   bottom: var(--_border-spacer);
   left: var(--_border-spacer);
-  width: 102px;
+  width: 104px;
   height: 92px;
   border: 1px solid currentColor;
   z-index: 1;
@@ -245,8 +244,7 @@ body {
   justify-content: space-between;
   height: 100px;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 20px;
-
+  padding: 6px 8px;
   transform: scale(0);
 }
 
@@ -269,7 +267,7 @@ body {
   display: block;
   padding-block: 8px;
   font-family: "SpecialElite";
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--_accent-color);
   transform: scale(0);
 }
@@ -283,7 +281,6 @@ body {
 
 .flower-card__icon-list {
   display: flex;
-
   list-style: none;
   padding-top: 0.55rem;
   padding-left: 0;
@@ -326,24 +323,25 @@ body {
   height: 202px;
 }
 
-.just-tall .flower-card__text-container {
+.just-tall .flower-card__text-container,
+.just-small .flower-card__text-container,
+.wide .flower-card__text-container {
   display: block;
+  overflow-y: hidden;
 }
 
-.just-tall .flower-card__title {
+.just-tall .flower-card__title,
+.just-small .flower-card__title {
   overflow-x: scroll;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
-.just-tall .flower-card__icon-list,
 .just-small .flower-card__icon-list {
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.just-tall .flower-card__text-container,
-.wide .flower-card__text-container {
-  overflow-y: hidden;
+.just-tall .flower-card__icon-list {
+  flex-direction: column;
 }
 
 .tall.wide .flower-card__back {
@@ -351,6 +349,8 @@ body {
 }
 
 .just-small:hover .flower-card__back,
+.just-small:hover .flower-card__title,
+.just-small:hover .flower-card__text-container,
 .just-small:hover .flower-card__icon-list,
 .tall:hover .flower-card__back,
 .tall:hover .flower-card__title,
